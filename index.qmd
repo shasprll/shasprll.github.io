@@ -1,0 +1,139 @@
+---
+title: "Pengaruh Nilai Ekspor terhadap Pertumbuhan Ekonomi di Indonesia pada tahun 2017-2022"
+subtitle: "Metode Penelitian Politeknik APP Jakarta"
+author: "Shaskia Aprillia Putri"
+date: 2022-08-10
+number-sections: true
+format:
+  html: default
+  docx: default
+---
+
+![logo APP](poltekapp.jpg)
+
+## Pendahuluan
+
+### Latar belakang
+
+Pertumbuhan ekonomi suatu negara merupakan indikator kritis yang mencerminkan kesehatan dan kinerja ekonominya. Menurut Sadono Sukirno (1996:33), pertumbuhan ekonomi adalah suatu proses kenaikan output perkapita yang terus menerus dalam jangka panjang. Produk Domestik Bruto (PDB) menjadi indikator utama dalam mengukur pertumbuhan ekonomi suatu negara. Sesuai dengan pendapat Rahardjo (2013) Pertumbuhan ekonomi merupakan upaya peningkatan kapasitas produksi untuk mencapai penambahan output, yang diukur menggunakan Produk Domestik Bruto (PDB) maupun menggunakan Produk Domestik Regional Bruto (PDRB) dalam suatu wilayah. Pertumbuhan PDB mencerminkan kinerja ekonomi secara keseluruhan berdasarkan berbagai sektor, termasuk ekspor.  
+
+Dalam konteks globalisasi ekonomi, ekspor menjadi kendaraan utama bagi negara-negara untuk memasuki pasar dunia, meningkatkan daya saing, dan mengoptimalkan sumber daya ekonominya. Sebagai sebuah negara berkembang, Indonesia telah mengimplementasikan kebijakan yang mendukung ekspor sebagai salah satu upaya untuk memperkuat pertumbuhan ekonominya. Dengan mengekspor beragam produk, mulai dari barang hingga jasa tingkat tinggi, suatu negara dapat memperluas pangsa pasar dan meningkatkan pertumbuhan ekonomi negaranya. Oleh karena itu, penelitian ini bertujuan untuk menggali lebih dalam mengenai pengaruh antara ekspor dan pertumbuhan ekonomi di Indonesia pada tahun 2017-2022.
+
+### Ruang lingkup
+
+Ruang lingkup pembahasan masalah disesuaikan dengan variabel yang akan dianalisis dalam penelitian ini, yang mencakup aspek mengenai data jumlah eskpor pada tahun 2017-2022 terhadap pertumbuhan ekonomi Indonesia. 
+Data inilah yang akan menjadi bahan penelitian yang akan digunakan dalam proses analisis.
+
+### Rumusan masalah
+
+1. Apakah adanya pengaruh pada nilai ekspor terhadap pertumbuhan ekonomi Indonesia?
+2. Bagaimana hubungan antara nilai eksporterhadap pertumbuhan ekonomi Indonesia?
+
+### Tujuan dan manfaat penelitian
+
+Tujuan utama penelitian ini adalah untuk menyelidiki apakah terdapat pengaruh yang signifikan antara nilai ekspor dan pertumbuhan ekonomi di Indonesia pada periode tahun 2017-2022. Dengan demikian, penelitian ini bertujuan untuk memberikan wawasan lebih mendalam mengenai kontribusi nilai ekspor terhadap perkembangan ekonomi negara.Adapun manfaat dari penelitian ini yaitu dapat memberikan pandangan yang lebih akurat mengenai sejauh mana nilai ekspor berpengaruh terhadap pertumbuhan ekonomi di Indonesia. 
+
+### Package
+
+Packages yang digunakan antara lain sebagai berikut:
+
+```{r}
+#| warning: false
+#| echo: true
+library(tidyverse)
+library(readxl)
+library(WDI) # tambahkan library lain jika diperlukan
+```
+
+## Studi pustaka
+
+1. Ekspor
+Ekspor memiliki peran penting dalam perekonomian suatu negara karena dapat meningkatkan pendapatan, menciptakan lapangan kerja, dan memperkuat pertumbuhan ekonomi. Menurut H Banu Santoso (2003), Ekspor adalah perdagangan dengan
+cara mengeluarkan barang dari dalam keluar wilayah pabean Indonesia
+dengan berdasarkan ketentuan yang berlaku.Negara-negara biasanya melakukan ekspor untuk memanfaatkan keunggulan komparatif yang dimilikinya dan memenuhi kebutuhan pasar internasional.
+
+2. Pertumbuhan Ekonomi
+Pertumbuhan ekonomi merujuk pada peningkatan secara berkelanjutan dari jumlah barang dan jasa yang dihasilkan oleh suatu perekonomian dalam suatu periode waktu tertentu. Pertumbuhan ini umumnya diukur dengan perubahan Produk Domestik Bruto (PDB) suatu negara. PDB mengukur nilai total barang dan jasa yang dihasilkan dalam batas wilayah suatu negara dalam satu periode waktu, biasanya dalam satu tahun.Simon Kuznets (dalam Arsyad, 2010) menyatakan bahwa pertumbuhan ekonomi merupakan kenaikan kapasitas jangka panjang dari negara yang bersangkutan untuk menyediakan berbagai barang ekonomi kepada penduduknya.
+
+
+## Metode penelitian
+
+### Data
+
+| Tahun | Ekspor            | GDP              |
+|-------|-------------------|------------------|
+|2017   |204924485909.911   |1015618744159.73  |
+|2018   |218905647884.814   |1042271532988.63  |
+|2019   |208057763662.383   |1119099871350.2   |
+|2020   |183546577015.846   |1059054842698.48  |
+|2021   |254008548673.178   |1186505455736.54  |
+|2022   |323079953659.956   |1319100220407.72  |
+
+Penelitian ini menggunakan data sekunder dengan bentuk data time series 2017-2022, data yang dipakai ialah data yang telah diolah dengan sumber World Development Indicators.
+
+Membaca Data
+```{r}
+#import dataset
+library(readxl)
+dat<-read_excel('Data Ekspor dan GDP Indonesia.xlsx')
+head(dat)
+ggplot(data = dat,aes(x=X,y=Y))+
+  geom_point()
+```
+#| label: fig-mpg
+#| fig-cap: "City and highway mileage for 38 popular models of cars.Color by number of cylinders"
+
+```
+
+### Metode analisis
+
+Metode yang dipilih adalah regresi univariat atau Ordinary Least Square (OLS) dengan 1 variabel independen. Penelitian ini bermaksud mencari hubungan antara nilai ekspor dan pertumbuhan ekonomi. Spesifikasi yang dilakukan adalah:
+
+$$
+y_{t}=\beta_0 + \beta_1 x_t+\mu_t
+$$ di mana $y_t$ adalah pertumbuhan ekonomi dan $x_t$ adalah nilai ekspor.
+
+## Pembahasan
+
+### Pembahasan masalah
+```{r}
+```{r}
+#import dataset
+library(readxl)
+dat<-read_excel('Data Ekspor dan GDP Indonesia.xlsx')
+head(dat)
+```
+
+
+### Analisis masalah
+
+Hasil regresinya adalah
+
+```{r}
+reg<-lm(X~Y,data=dat)
+summary(reg)
+```
+Berdasarkan hasil analisis regresi linear yang dilakukan dengan rumusan model:
+X = -2.271 X 10^11 + 0.409 x Y
+
+dengan X sebagai pertumbuhan ekonomi dan Y sebagai nilai ekspor, diperoleh beberapa informasi penting:
+1. Intercept (Intersep): Koefisien intercept(-2.271 X 10^11) tidak signifikan pada tingkat kepercayaan 95%, dengan nilai p-value sebesar 0.07400.
+2. Koefisien Y (Ekspor): Koefisien untuk Y (0.409) signifikan pada tingkat kepercayaan 95%, dengan nilai p-value sebesar 0.00815.
+3. R-squared: Nilai R-squared sebesar 0.8563, yang mengindikasikan bahwa model dapat menjelaskan sekitar 85.63% variabilitas pertumbuhan ekonomi.
+
+## Kesimpulan
+
+1. Pengaruh Ekspor terhadap Pertumbuhan Ekonomi: Terdapat pengaruh yang signifikan antara nilai ekspor (Y)dan pertumbuhan ekonomi (X) Seiring dengan nilai koefisien (Y) yang signifikan positif. Artinya, peningkatan nilai ekspor berkontribusi positif terhadap pertumbuhan ekonomi Indonesia.
+2. Hubungan Antara Nilai Ekspor dan Pertumbuhan Ekonomi: Hubungan antara nilai ekspor dan pertumbuhan ekonomi bersifat positif, yang dapat diartikan bahwa semakin tinggi nilai ekspor, semakin besar kontribusinya terhadap pertumbuhan ekonomi Indonesia
+
+## Referensi
+
+Agustina, S., Astuti, A., Kusumawati, A. C., Rohma, S. M., Aini, N., Oktaviani, D., ... & Tambunan, N. (2023). PENGARUH EKSPOR TERHADAP PERTUMBUHAN EKONOMI DI INDONESIA. Jurnal Manajemen dan Ekonomi Kreatif, 1(1), 113-126.
+
+Siregar, I. M., Pratiwi, I., Nurhasanah, N., & Sinaga, S. (2019). Pengaruh ekspor terhadap pertumbuhan ekonomi di Indonesia periode tahun 2013-2017. Jurnal Ekodik: Ekonomi Pendidikan, 7(2), 46-54.
+
+Hodijah, S., & Angelina, G. P. (2021). Analisis pengaruh ekspor dan impor terhadap pertumbuhan ekonomi di Indonesia. Jurnal Manajemen Terapan Dan Keuangan, 10(01), 53-62.
+
+Hanifah, U. (2022). Pengaruh Ekspor Dan Impor Terhadap Pertumbuhan Ekonomi Di Indonesia. Transekonomika: Akuntansi, Bisnis Dan Keuangan, 2(6), 107-126.
+
+Astuti, I. P., & Ayuningtyas, F. J. (2018). Pengaruh ekspor dan impor terhadap pertumbuhan ekonomi di Indonesia. Jurnal Ekonomi & Studi Pembangunan, 19(1), 1-10.
